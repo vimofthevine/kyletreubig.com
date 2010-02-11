@@ -1,0 +1,21 @@
+[submodule "system"]
+	path = system
+	url = git://github.com/kohana/core.git
+[submodule "modules/database"]
+	path = modules/database
+	url = git://github.com/kohana/database.git
+[submodule "modules/pagination"]
+	path = modules/pagination
+	url = git://github.com/kohana/pagination.git
+[submodule "modules/sprig"]
+	path = modules/sprig
+	url = git://github.com/shadowhand/sprig.git
+[submodule "modules/acl"]
+	path = modules/acl
+	url = git://github.com/Wouterrr/ACL.git
+[submodule "modules/a1"]
+	path = modules/a1
+	url = git://github.com/Wouterrr/A1.git
+[submodule "modules/a2"]
+	path = modules/a2
+	url = git://github.com/Wouterrr/A2.git
