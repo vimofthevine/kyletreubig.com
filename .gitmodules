@@ -22,3 +22,6 @@
 [submodule "modules/grid"]
 	path = modules/grid
 	url = git://github.com/vimofthevine/grid.git
+[submodule "modules/phpunit"]
+	path = modules/phpunit
+	url = git://github.com/kohana/unittest.git

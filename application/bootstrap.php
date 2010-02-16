@@ -8,7 +8,7 @@
  * @see  http://docs.kohanaphp.com/about.configuration
  * @see  http://php.net/timezones
  */
-date_default_timezone_set('America/Chicago');
+date_default_timezone_set('America/New_York');
 
 /**
  * Set the default locale.
@@ -51,8 +51,11 @@ ini_set('unserialize_callback_func', 'spl_autoload_call');
  */
 Kohana::init(array(
     'base_url'  => 'http://localhost/kyletreubig/',
-    'errors'    => TRUE,
+    'index_file'=> INDEX_FILE,
     'profile'   => TRUE,
+    'errors'    => ! IN_PRODUCTION,
+    'profiling' => ! IN_PRODUCTION,
+    'caching'   => IN_PRODUCTION,
 ));
 
 /**
@@ -62,24 +65,26 @@ Kohana::$log->attach(new Kohana_Log_File(APPPATH.'logs'));
 
 /**
  * Attach a file reader to config. Multiple readers are supported.
+ * Attach a file reader to profile-specific config directory.
  */
+Kohana::$config->attach(new Kohana_Config_File(CONF_DIR));
 Kohana::$config->attach(new Kohana_Config_File);
 
 /**
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
-    'sentry'    => MODPATH.'sentry',    // Auth Package
-    'a2'        => MODPATH.'a2',        // Authorization
-    'a1'        => MODPATH.'a1',        // Authentication
-    'acl'       => MODPATH.'acl',       // Object-level ACL
     'grid'      => MODPATH.'grid',      // Easy table creation
-    'versioned' => MODPATH.'versioned', // Model Version Control
-    'sprig'     => MODPATH.'sprig',     // Sprig models
-    'orm'       => MODPATH.'orm',       // Object Relationship Mapping
-    'migration' => MODPATH.'migration', // Database Migration
-    'database'  => MODPATH.'database',  // Database access
     'phpunit'   => MODPATH.'phpunit',   // PHPUnit integration
+    //'sentry'    => MODPATH.'sentry',    // Auth Package
+    //'a2'        => MODPATH.'a2',        // Authorization
+    //'a1'        => MODPATH.'a1',        // Authentication
+    //'acl'       => MODPATH.'acl',       // Object-level ACL
+    //'versioned' => MODPATH.'versioned', // Model Version Control
+    //'sprig'     => MODPATH.'sprig',     // Sprig models
+    //'orm'       => MODPATH.'orm',       // Object Relationship Mapping
+    //'migration' => MODPATH.'migration', // Database Migration
+    //'database'  => MODPATH.'database',  // Database access
     // 'auth'       => MODPATH.'auth',       // Basic authentication
     // 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
     // 'image'      => MODPATH.'image',      // Image manipulation
@@ -98,12 +103,45 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
     ));
 
 if ( ! defined('SUPPRESS_REQUEST')) {
+
     /**
-     * Execute the main request. A source of the URI can be passed, eg: $_SERVER['PATH_INFO'].
-     * If no source is specified, the URI will be automatically detected.
-     */
-    echo Request::instance()
-        ->execute()
-        ->send_headers()
-        ->response;
+    * Execute the main request using PATH_INFO. If no URI source is specified,
+    * the URI will be automatically detected.
+    */
+    $request = Request::instance($_SERVER['PATH_INFO']);
+
+    try {
+        // Attempt to execute the response
+        $request->execute();
+    } catch (Exception $e) {
+        if ( ! IN_PRODUCTION) {
+            throw $e;   // Just re-throw the exception
+        }
+
+        // Log the error
+        Kohana::$log->add(Kohana::ERROR, Kohana::exception_text($e));
+
+        // Create a 404 response
+        $request->status    = 404;
+        $request->response  = View::factory('template')
+            ->set('title', '404')
+            ->set('content', View::factory('errors/404'));
+    }
+
+    if ($request->response) {
+        // Get the total memory and execution time
+        $total = array(
+            '{memory_usage}'    => number_format((memory_get_peak_usage() - KOHANA_START_MEMORY) / 1024, 2).'KB',
+            '{execution_time}'  => number_format(microtime(TRUE) - KOHANA_START_TIME, 5).' seconds',
+        );
+
+        // Insert the totals into the response
+        $request->response = strtr((string) $request->response, $total);
+    }
+
+    /**
+    * Display the request response
+    */
+    echo $request->send_headers()->response;
 }
+

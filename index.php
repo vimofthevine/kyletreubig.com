@@ -1,19 +1,24 @@
 <?php
 
 /**
+ * Include environment (profile) settings
+ */
+include_once('env.php');
+
+/**
  * The directory in which your application specific resources are located.
  * The application directory must contain the config/kohana.php file.
  *
  * @see  http://docs.kohanaphp.com/install#application
  */
-$application = 'application';
+$application = APP_LOC;
 
 /**
  * The directory in which your modules are located.
  *
  * @see  http://docs.kohanaphp.com/install#modules
  */
-$modules = '../modules-3.0';
+$modules = MOD_LOC;
 
 /**
  * The directory in which the Kohana resources are located. The system
@@ -21,7 +26,7 @@ $modules = '../modules-3.0';
  *
  * @see  http://docs.kohanaphp.com/install#system
  */
-$system = '../kohana-3.0';
+$system = SYS_LOC;
 
 /**
  * The default extension of resource files. If you change this, all resources
@@ -44,7 +49,7 @@ define('EXT', '.php');
  * When using a legacy application with PHP >= 5.3, it is recommended to disable
  * deprecated notices. Disable with: E_ALL & ~E_DEPRECATED
  */
-error_reporting(E_ALL | E_STRICT);
+error_reporting(ERR_LVL);
 
 /**
  * End of standard configuration! Changing any of the code below should only be
