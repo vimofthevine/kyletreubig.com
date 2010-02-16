@@ -19,3 +19,6 @@
 [submodule "modules/a2"]
 	path = modules/a2
 	url = git://github.com/Wouterrr/A2.git
+[submodule "modules/grid"]
+	path = modules/grid
+	url = git://github.com/vimofthevine/grid.git
