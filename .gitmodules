@@ -25,3 +25,6 @@
 [submodule "modules/phpunit"]
 	path = modules/phpunit
 	url = git://github.com/kohana/unittest.git
+[submodule "modules/versioned"]
+	path = modules/versioned
+	url = git://github.com/vimofthevine/versioned.git
