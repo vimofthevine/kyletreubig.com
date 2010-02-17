@@ -67,24 +67,28 @@ Kohana::$log->attach(new Kohana_Log_File(APPPATH.'logs'));
  * Attach a file reader to config. Multiple readers are supported.
  * Attach a file reader to profile-specific config directory.
  */
-Kohana::$config->attach(new Kohana_Config_File(CONF_DIR));
 Kohana::$config->attach(new Kohana_Config_File);
+Kohana::$config->attach(new Kohana_Config_File(CONF_DIR), TRUE);
 
 /**
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
-    'grid'      => MODPATH.'grid',      // Easy table creation
-    'phpunit'   => MODPATH.'phpunit',   // PHPUnit integration
+    // Mine
     //'sentry'    => MODPATH.'sentry',    // Auth Package
+    'versioned' => MODPATH.'versioned', // Model Version Control
+    'grid'      => MODPATH.'grid',      // Easy table creation
+    // Wouter
     //'a2'        => MODPATH.'a2',        // Authorization
     //'a1'        => MODPATH.'a1',        // Authentication
     //'acl'       => MODPATH.'acl',       // Object-level ACL
-    //'versioned' => MODPATH.'versioned', // Model Version Control
-    //'sprig'     => MODPATH.'sprig',     // Sprig models
+    // Shadowhand
+    'sprig'     => MODPATH.'sprig',     // Sprig models
+    // Kohana
+    'database'  => MODPATH.'database',  // Database access
+    'phpunit'   => MODPATH.'phpunit',   // PHPUnit integration
     //'orm'       => MODPATH.'orm',       // Object Relationship Mapping
     //'migration' => MODPATH.'migration', // Database Migration
-    //'database'  => MODPATH.'database',  // Database access
     // 'auth'       => MODPATH.'auth',       // Basic authentication
     // 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
     // 'image'      => MODPATH.'image',      // Image manipulation
