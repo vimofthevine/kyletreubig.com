@@ -78,17 +78,20 @@ Kohana::modules(array(
     //'sentry'    => MODPATH.'sentry',    // Auth Package
     'versioned' => MODPATH.'versioned', // Model Version Control
     'grid'      => MODPATH.'grid',      // Easy table creation
+    'sink'      => MODPATH.'sink',      // Database Synchronization
+
     // Wouter
     //'a2'        => MODPATH.'a2',        // Authorization
     //'a1'        => MODPATH.'a1',        // Authentication
     //'acl'       => MODPATH.'acl',       // Object-level ACL
+
     // Shadowhand
     'sprig'     => MODPATH.'sprig',     // Sprig models
+
     // Kohana
     'database'  => MODPATH.'database',  // Database access
     'phpunit'   => MODPATH.'phpunit',   // PHPUnit integration
     //'orm'       => MODPATH.'orm',       // Object Relationship Mapping
-    //'migration' => MODPATH.'migration', // Database Migration
     // 'auth'       => MODPATH.'auth',       // Basic authentication
     // 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
     // 'image'      => MODPATH.'image',      // Image manipulation

@@ -28,3 +28,6 @@
 [submodule "modules/versioned"]
 	path = modules/versioned
 	url = git://github.com/vimofthevine/versioned.git
+[submodule "modules/sink"]
+	path = modules/sink
+	url = git://github.com/vimofthevine/sink.git
