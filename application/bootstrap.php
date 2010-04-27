@@ -75,27 +75,32 @@ Kohana::$config->attach(new Kohana_Config_File(CONF_DIR), TRUE);
  */
 Kohana::modules(array(
     // Mine
-    //'sentry'    => MODPATH.'sentry',    // Auth Package
+    'blog'      => MODPATH.'blog',      // Blogging Engine
+    'cms'       => MODPATH.'cms',       // CMS
+    'admin'     => MODPATH.'admin',     // Control Panel Framework
+    'sentry'    => MODPATH.'sentry',    // Auth Package
     'versioned' => MODPATH.'versioned', // Model Version Control
     'grid'      => MODPATH.'grid',      // Easy table creation
-    'sink'      => MODPATH.'sink',      // Database Synchronization
 
     // Wouter
-    //'a2'        => MODPATH.'a2',        // Authorization
-    //'a1'        => MODPATH.'a1',        // Authentication
-    //'acl'       => MODPATH.'acl',       // Object-level ACL
+    'a2'        => MODPATH.'a2',        // Authorization
+    'a1'        => MODPATH.'a1',        // Authentication
+    'acl'       => MODPATH.'acl',       // Object-level ACL
 
     // Shadowhand
     'sprig'     => MODPATH.'sprig',     // Sprig models
 
+    // daveWid
+    'console'   => MODPATH.'console',   // Log Viewer
+
     // Kohana
     'database'  => MODPATH.'database',  // Database access
-    'phpunit'   => MODPATH.'phpunit',   // PHPUnit integration
+    'pagination' => MODPATH.'pagination', // Paging of results
+    //'phpunit'   => MODPATH.'phpunit',   // PHPUnit integration
     //'orm'       => MODPATH.'orm',       // Object Relationship Mapping
     // 'auth'       => MODPATH.'auth',       // Basic authentication
     // 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
     // 'image'      => MODPATH.'image',      // Image manipulation
-    // 'pagination' => MODPATH.'pagination', // Paging of results
     // 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
     ));
 

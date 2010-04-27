@@ -22,12 +22,21 @@
 [submodule "modules/grid"]
 	path = modules/grid
 	url = git://github.com/vimofthevine/grid.git
-[submodule "modules/phpunit"]
-	path = modules/phpunit
-	url = git://github.com/kohana/unittest.git
 [submodule "modules/versioned"]
 	path = modules/versioned
 	url = git://github.com/vimofthevine/versioned.git
-[submodule "modules/sink"]
-	path = modules/sink
-	url = git://github.com/vimofthevine/sink.git
+[submodule "modules/blog"]
+	path = modules/blog
+	url = git@github.com:vimofthevine/blog.git
+[submodule "modules/console"]
+	path = modules/console
+	url = git://github.com/vimofthevine/console.git
+[submodule "modules/cms"]
+	path = modules/cms
+	url = git://github.com/vimofthevine/cms.git
+[submodule "modules/admin"]
+	path = modules/admin
+	url = git://github.com/vimofthevine/admin.git
+[submodule "modules/sentry"]
+	path = modules/sentry
+	url = git://github.com/vimofthevine/sentry.git

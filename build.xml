@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<!-- Kohana module build file -->
+<project name="rachelkwapien.com" default="usage" basedir=".">
+	<target name="usage">
+		<echo msg="Phing usage:" />
+		<echo msg="  phing clean	: clean all phing output" />
+		<echo msg="  phing package  : create application package" />
+	</target>
+
+	<target name="init">
+		<!-- Custom properties -->
+		<property file="build.properties" />
+		<!-- Default properties -->
+		<property name="export" value="/tmp/phing" />
+		<property name="tarballs" value="no" />
+	</target>
+
+	<target name="clean" depends="init" description="Clean phing output">
+		<echo msg="Cleaning build output" />
+		<delete dir="${export}" />
+	</target>
+
+	<target name="copy" depends="init">
+		<echo msg="Copying source files to build area" />
+		<mkdir dir="${export}/tmp" />
+		<copy todir="${export}/tmp" includeemptydirs="true">
+			<fileset dir=".">
+				<include name="**/*" />
+				<exclude name="**/.git/**" />
+				<exclude name="**/.gitignore" />
+				<exclude name="**/.gitmodules" />
+				<exclude name="build.xml" />
+				<exclude name="**/logs/**" />
+				<exclude name="**/cache/**" />
+			</fileset>
+		</copy>
+		<mkdir dir="${export}/tmp/application/cache" />
+		<mkdir dir="${export}/tmp/application/logs" />
+	</target>
+
+	<target name="package" depends="copy" description="Create application package">
+		<echo msg="Creating module package" />
+
+		<if>
+			<equals arg1="yes" arg2="${tarballs}" />
+			<then>
+				<tar destfile="${export}/application.tar" compression="gzip">
+					<fileset dir="${export}/tmp">
+						<include name="**/**" />
+					</fileset>
+				</tar>
+			</then>
+		</if>
+	</target>
+
+</project>
+

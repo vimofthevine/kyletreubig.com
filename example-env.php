@@ -8,8 +8,12 @@ define('SYS_LOC', 'system/');
 /* Error level */
 define('ERR_LVL', E_ALL | E_STRICT);
 
+/* Logging level */
+define('LOG_LVL', 'INFO,ERROR,DEBUG');
+
 /* Config */
-define('INDEX_FILE', 'index.php');
+define('BASE_URL', '/rachelkwapien.com');
+define('INDEX_FILE', FALSE);
 define('CONF_DIR', 'config/dev');
 define('IN_PRODUCTION', FALSE);
 
