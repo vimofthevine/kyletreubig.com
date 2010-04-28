@@ -1,0 +1,38 @@
+/* Header */
+header { text-align:center; }
+header h1 { font-variant:small-caps; }
+
+/* Changelog Table */
+table#changelog { border:1px solid #000; margin:0px auto; width:350px; }
+table#changelog tr td { padding-left:10px; }
+table#changelog tr td:first-child { padding:0px; text-align:center; }
+
+/* Table of Contents */
+nav ol { margin-left:50px; }
+nav ol ol { margin-left:0px; }
+nav ol#appendix { list-style-type:upper-alpha; }
+nav a:visited { color:blue; }
+
+/* Document body */
+section h2 { margin-left:10px; }
+section h3 { margin-left:20px; }
+section a { margin-left:20px; }
+section p { margin-left:30px; }
+section p a { margin-left:0px; }
+section ol, section ul { list-style-position:inside; }
+section dl { margin-left:40px; }
+section ol p { margin:0px 0px 0px 30px; }
+section a.top:visited { color:blue; }
+
+/* Requirements Matrix */
+table#req_matrix { border:1px solid #000; margin:0px auto; width:950px; }
+table#req_matrix tr th { padding:0px 5px; }
+table#req_matrix tr td { padding:0px 5px; }
+
+/* Test Records */
+table#test_records { border:1px solid #000; margin:0px auto; width:900px; }
+table#test_records tr th { padding:0px 5px; }
+table#test_records tr td { padding:0px 5px; }
+
+/* Footer */
+footer { text-align:center; }

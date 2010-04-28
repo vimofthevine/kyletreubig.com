@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Website Requirements Specification for kyletreubig.com</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+<header>
+	<h1>Website Requirements Specification for kyletreubig.com</h1>
+	<address>Kyle Treubig</address>
+	<p>
+		Rev - <br />
+		<time datetime="2010-04-28">April 28, 2010</time>
+	</p>
+</header>
+
+<section>
+	<h1>Revision History</h1>
+	<table id="changelog" rules="all">
+		<thead>
+			<tr>
+				<th>Revision</th>
+				<th>Date</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>-</td>
+				<td>2010-04-28</td>
+				<td>Initial Creation</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<nav>
+	<h1 id="toc">Table of Contents</h1>
+	<ol>
+		<li>Introduction
+			<ol>
+				<li><a href="#intro-purpose">Purpose of This Document</a></li>
+				<li><a href="#intro-scope">Scope of This Document</a></li>
+				<li><a href="#intro-descrip">Description of This Document</a></li>
+			</ol>
+		</li>
+		<li>General Description
+			<ol>
+				<li><a href="#descrip-overview">Overview</a></li>
+				<li><a href="#descrip-goals">Goals</a></li>
+				<li><a href="#descrip-audience">Target Audience</a></li>
+			</ol>
+		</li>
+		<li>Requirements
+			<ol>
+				<li><a href="#req-functions">Functional Requirements</a>
+					<ol>
+						<li><a href="#req-functions-backend">Back End Functions</a></li>
+						<li><a href="#req-functions-frontent">Front End Functions</a></li>
+						<li><a href="#req-functions-users">User Management Functions</a></li>
+						<li><a href="#req-functions-content">Content Management Functions</a></li>
+						<li><a href="#req-functions-blog">Blog Functions</a></li>
+						<li><a href="#req-functions-music">Music Portfolio Functions</a></li>
+					</ol>
+				</li>
+				<li><a href="#req-aesthetic">Aesthetic Requirements</a>
+					<ol>
+						<li><a href="#req-aesthetic-layout">Layout</a></li>
+						<li><a href="#req-aesthetic-graphics">Graphic Elements</a></li>
+						<li><a href="#req-aesthetic-typography">Typography</a></li>
+						<li><a href="#req-aesthetic-urls">URLs</a></li>
+					</ol>
+				</li>
+				<li><a href="#req-ui">User Interaction Requirements</a>
+					<ol>
+						<li><a href="#req-ui-nav">Navigation</a></li>
+						<li><a href="#req-ui-ajax">Ajax</a></li>
+					</ol>
+				</li>
+				<li><a href="#req-code">Coding Requirements</a>
+					<ol>
+						<li><a href="#req-code-html">HTML Output</a></li>
+						<li><a href="#req-code-css">CSS Naming</a></li>
+					</ol>
+				</li>
+				<li><a href="#req-special">Special Requirements</a>
+					<ol>
+						<li><a href="#req-special-access">Access Control</a></li>
+						<li><a href="#req-special-usability">Usability</a></li>
+					</ol>
+				</li>
+			</ol>
+		</li>
+		<li>Appendix
+			<ol id="appendix">
+				<li><a href="#appendix-reqmat">Requirements Traceability Matrix</a></li>
+			</ol>
+		</li>
+	</ol>
+</nav>
+
+<section>
+	<h1 id="intro">1 Introduction</h1>
+	<h2 id="intro-purpose">1.1 Purpose of This Document</h2>
+	<p>
+		The purpose of this document is to lay out the high-level requirements
+		to which the design of kyletreubig.com must conform.
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="intro-scope">1.2 Scope of This Document</h2>
+	<p>
+		This document describes the high-level customer requirements and
+		derived requirements for kyletreubig.com.  Requirements are broken
+		down into functional, aesthetic, UI, and coding (or design)
+		requirements.
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="intro-descrip">1.3 Description of This Document</h2>
+	<p>
+		The following section describes, at a high level, what kyletreubig.com
+		is and how the user will interact through its pages.  The proceeding
+		section contains all requirements that must be met in the design
+		of kyletreubig.com.  Lastly, a requirements matrix is provided in
+		the Appendix.
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+</section>
+<section>
+	<h1 id="descrip">2 General Description</h1>
+	<h2 id="descrip-overview">2.1 Overview</h2>
+	<p>
+		The kyletreubig.com will be a resource to fellow web developers
+		through informative articles and demonstration of design and
+		development techniques.
+	</p>
+	<p>
+		Additionally, kyletreubig.com will be home to a personal portfolio
+		of audio recordings.
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="descrip-goals">2.2 Goals</h2>
+	<p>
+		The goals of kyletreubig.com include, but are not limited to:
+		<ul>
+			<li>Provide an online presence for Kyle Treubig</li>
+			<li>Provide an outlet for both creative writing
+				and the sharing of technical knowledge related
+				to the design and development of websites
+			</li>
+			<li>Provide an outlet for sharing musical audio
+				recordings and receive feedback on recordings
+			</li>
+		</ul>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="descrip-audience">2.3 Target Audience</h2>
+	<p>
+		Kyletreubig.com is directed towards an audience that fully
+		embraces modern usage of the internet.  As such, there is no
+		hindrance towards the use of the latest technologies, such as
+		HTML 5 and JavaScript.
+
+		<dl>
+			<dt>Tier 1 Audience</dt>
+			<dd>
+				The tier 1 audience is friends and known acquaintances.  While
+				this audience may not be visiting kyletreubig.com for the
+				technical content, they will visit out of acquaintance.
+			</dd>
+
+			<dt>Tier 2 Audience</dt>
+			<dd>
+				The tier 2 audience is classmates, coworkers, and fellow web
+				developers.  In short, anyone with a technical background
+				and still an acquaintance.
+			</dd>
+
+			<dt>Tier 3 Audience</dt>
+			<dd>
+				The tier 3 audience is global web developers.  This includes
+				any visitors to the site referred by search engines or sister
+				sites.
+			</dd>
+		</dl>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+</section>
+<section>
+	<h1 id="req">3 Requirements</h1>
+	<h2 id="req-functions">3.1 Functional Requirements</h2>
+	<h3 id="req-functions-backend">3.1.1 Back End Functions</h3>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="req-functions-frontend">3.1.2 Front End Functions</h3>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="req-functions-users">3.1.3 User Management Functions</h3>
+	<p>
+		<ol>
+			<li>Privileged users can create new users
+				<ol>
+					<li>The given password must be hashed with a salt</li>
+				</ol>
+			</li>
+			<li>Privileged users can modify user information
+				<ol>
+					<li>If given, the new password must be hashed with a salt</li>
+				</ol>
+			</li>
+			<li>Privileged users can promote other users</li>
+			<li>Privileged users can delete other users</li>
+			<li>Users may log in with a username and password</li>
+			<li>Users may log out</li>
+			<li>Users may modify their own user information</li>
+			<li>Users may change their password
+				<ol>
+					<li>The given password must be hashed with a salt</li>
+				</ol>
+			</li>
+		</ol>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="req-functions-content">3.1.4 Content Management Functions</h3>
+	<p>
+		<ol>
+			<li>Privileged users can edit page contents</li>
+			<li>Modifications to page contents will be tracked</li>
+			<li>Privileged users can compare versions of pages</li>
+			<li>The about page will be editable and under version control</li>
+			<li>Privileged users can upload image files</li>
+			<li>Uploaded images can be included on editable pages</li>
+		</ol>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="req-functions-blog">3.1.5 Blog Functions</h3>
+	<p>
+		<ol>
+			<li>Privileged users can create new articles</li>
+			<li>Article content can be uploaded via a file or defined by direct input into a text editor</li>
+			<li>Privileged users can change the state of articles
+				<ol>
+					<li>The states are draft, published, archived</li>
+				</ol>
+			</li>
+			<li>Articles will belong to a single category</li>
+			<li>Privileged users can create new categories</li>
+			<li>Privileged users can rename categories</li>
+			<li>Privileged users can delete categories</li>
+			<li>Articles belonging to a deleted category become uncategorized
+				<ol>
+					<li>The "uncategorized" category must exist and cannot be modified or deleted</li>
+				</ol>
+			</li>
+			<li>Articles can be tagged with multiple tag keywords</li>
+			<li>Privileged users can edit draft and published articles</li>
+			<li>A public RSS feed will display the last 10 published articles</li>
+			<li>Published article view counts will be recorded</li>
+			<li>View counts from the past seven days will determine popular articles
+				<ol>
+					<li>Daily counts must be recorded for at least the past seven days</li>
+				</ol>
+			</li>
+			<li>Users can post comments on articles</li>
+			<li>Guests will provide user information along with comment</li>
+			<li>User profile information will be used for logged-in user's comments</li>
+			<li>A daily email will contain a list of all new comments posted</li>
+			<li>Privileged users can edit comments</li>
+			<li>Privileged users can delete comments</li>
+			<li>Privileged users can disable comments for individual articles</li>
+			<li>Comments will be automatically disabled on articles over 90 days old</li>
+			<li>Comments will be filtered by a Bayesian probability filter
+				<ol>
+					<li>Comments with a Bayesian probability less than 0.2 are posted</li>
+					<li>Comments with a Bayesian probability between 0.2 and 0.9 are placed in a moderation queue</li>
+					<li>Comments with a Bayesian probability greater than 0.9 is classified are spam</li>
+				</ol>
+			</li>
+			<li>Privileged users can classify comments as clean or spam
+				<ol>
+					<li>Privileged users can approve comments in the moderation queue</li>
+					<li>Privileged users can classify comments in the moderation queue as spam</li>
+					<li>Privileged users can classify posted comments as spam</li>
+					<li>Privileged users can approve comments that have been classified as spam</li>
+				</ol>
+			</li>
+			<li>Privileged users can teach the Bayesian filter
+				<ol>
+					<li>When approving comments, privileged users may choose to teach as ham</li>
+					<li>When approving comments, privileged users may choose to unteach as spam</li>
+					<li>When classifying as spam, privileged users may choose to teach as spam</li>
+					<li>When classifying as spam, privileged users may choose to unteach as ham</li>
+				</ol>
+			</li>
+		</ol>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="req-functions-music">3.1.6 Music Portfolio Functions</h3>
+	<p>
+		<ol>
+			<li>Privileged users can create new portfolio entries</li>
+			<li>Privileged users can upload audio recordings for each portfolio entry</li>
+			<li>Users can post comments on entries</li>
+			<li>Portfolio comment requirements are the same as the blog comment requirements</li>
+			<li>Privileged users can edit portfolio entries</li>
+			<li>Privileged users can remove audio recordings from a portfolio entry</li>
+			<li>Privileged users can delete portfolio entries
+				<ol>
+					<li>All associated audio recordings must be deleted</li>
+				</ol>
+			</li>
+		</ol>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="req-aesthetic">3.2 Aesthetic Requirements</h2>
+	<h3 id="req-aesthetic-layout">3.2.1 Layout</h3>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="req-aesthetic-graphics">3.2.2 Graphic Elements</h3>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="req-aesthetic-typography">3.2.3 Typography</h3>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="req-aesthetic-urls">3.2.4 URLs</h3>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="req-ui">3.3 User Interaction Requirements</h2>
+	<h3 id="req-ui-nav">3.3.1 Navigation</h3>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="req-ui-ajax">3.3.2 Ajax</h3>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="req-code">3.4 Coding Requirements</h2>
+	<h3 id="req-code-html">3.4.1 HTML Output</h3>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="req-code-css">3.4.2 CSS Naming</h3>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="req-special">3.5 Special Requirements</h2>
+	<h3 id="req-special-access">3.5.1 Access Control</h3>
+	<p>
+		In accordance with ACL convention, all access is denied unless
+		explicitly specified as an access control rule
+	</p>
+	<p>
+		<ol>
+			<li>Roles
+				<ol>
+					<li>Guests are visitors who are not logged in</li>
+					<li>Users are visitors who are logged in</li>
+					<li>Admins are privileged users</li>
+				</ol>
+			</li>
+			<li>Rules
+				<ol>
+					<li>Users can only modify user information for themselves</li>
+					<li>Admins can perform all user management actions with exceptions:
+						<ol>
+							<li>Admins cannot delete themselves</li>
+							<li>Admins cannot change their own role (demote to lower role)</li>
+						</ol>
+					</li>
+					<li>Admins can perform all page management actions</li>
+					<li>Admins can perform all assets management actions</li>
+					<li>Admins can perform all blog management actions</li>
+					<li>Admins can perform all music portfolio management actions</li>
+					<li>All users can view published articles</li>
+					<li>All users can post comments on articles</li>
+					<li>Users cannot change their username</li>
+				</ol>
+			</li>
+		</ol>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="req-special-usability">3.5.2 Usability</h3>
+	<p>
+		<ol>
+			<li>All front-end functionality must be usable when JavaScript is disabled
+				<ol>
+					<li>All JavaScript functionality must degrade gracefully</li>
+				</ol>
+			</li>
+			<li>All front-end functionality must be usable in a text-only browser
+				<ol>
+					<li>All content and navigation must be clearly displayed</li>
+				</ol>
+			</li>
+		</ol>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+</section>
+<section>
+	<h1>4 Appendix</h1>
+	<h2 id="appendix-reqmat">A - <a href="RTM.html">Requirements Traceability Matrix</a></h2>
+	<a class="top" href="#toc">Top</a>
+</section>
+
+<footer>
+	<p>Rev -<br />&#169; 2010 Kyle Treubig</p>
+</footer>
+
+</body>
+</html>

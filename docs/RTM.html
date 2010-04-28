@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Requirements Traceability Matrix for kyletreubig.com</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+<header>
+    <h1>Requirements Traceability Matrix for kyletreubig.com</h1>
+    <address>Kyle Treubig</address>
+    <p>
+        Rev - <br />
+        <time datetime="2010-04-28">April 28, 2010</time>
+    </p>
+</header>
+
+<section>
+    <h1>Revision History</h1>
+    <table id="changelog" rules="all">
+        <thead>
+            <tr>
+                <th>Revision</th>
+                <th>Date</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>-</td>
+                <td>2010-04-28</td>
+                <td>Initial Creation</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h1>Requirements Matrix</h1>
+    <table id="req_matrix" rules="all">
+        <thead>
+            <tr>
+                <th>Req.&nbsp;#</th>
+                <th>Requirement</th>
+                <th>Derived Req.</th>
+                <th>Test&nbsp;#</th>
+                <th>Test</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>3.1.3.1</td>
+                <td>Privileged users can create new users</td>
+                <td>The given password must be hashed with a salt</td>
+                <td>2.2.3.5</td>
+                <td>Create a new user</td>
+            </tr>
+            <tr>
+                <td>3.1.3.2</td>
+                <td>Privileged users can modify user information</td>
+                <td>If given, the new password must be hashed with a salt</td>
+                <td>2.2.3.6</td>
+                <td>Modify other user information</td>
+            </tr>
+            <tr>
+                <td>3.1.3.3</td>
+                <td>Privileged users can promote other users</td>
+                <td></td>
+                <td>2.2.3.7</td>
+                <td>Change user role</td>
+            </tr>
+            <tr>
+                <td>3.1.3.4</td>
+                <td>Privileged users can delete other users</td>
+                <td></td>
+                <td>2.2.3.8</td>
+                <td>Delete user</td>
+            </tr>
+            <tr>
+                <td>3.1.3.5</td>
+                <td>Users may log in with a username and password</td>
+                <td></td>
+                <td>2.2.3.1</td>
+                <td>Log in as user</td>
+            </tr>
+            <tr>
+                <td>3.1.3.6</td>
+                <td>Users may log out</td>
+                <td></td>
+                <td>2.2.3.2</td>
+                <td>Log out</td>
+            </tr>
+            <tr>
+                <td>3.1.3.7</td>
+                <td>Users may modify their own user information</td>
+                <td></td>
+                <td>2.2.3.3</td>
+                <td>Modify own user information</td>
+            </tr>
+            <tr>
+                <td>3.1.3.8</td>
+                <td>Users may change their password</td>
+                <td>The given password must be hashed with a salt</td>
+                <td>2.2.3.4</td>
+                <td>Change own password</td>
+            </tr>
+            <tr>
+                <td>3.1.4.1</td>
+                <td>Privileged users can edit page contents</td>
+                <td></td>
+                <td>2.2.4.1</td>
+                <td>Modify page contents</td>
+            </tr>
+            <tr>
+                <td>3.1.4.2</td>
+                <td>Modifications to page contents will be tracked</td>
+                <td></td>
+                <td>2.2.4.2</td>
+                <td>View page versions</td>
+            </tr>
+            <tr>
+                <td>3.1.4.3</td>
+                <td>Privileged users can compare versions of pages</td>
+                <td></td>
+                <td>2.2.4.3</td>
+                <td>Compare page versions</td>
+            </tr>
+            <tr>
+                <td>3.1.4.4</td>
+                <td>The about page will be editable and under version control</td>
+                <td></td>
+                <td>2.2.4.4</td>
+                <td>Inspect about page</td>
+            </tr>
+			<tr>
+				<td>3.1.4.5</td>
+				<td>Privileged users can upload image files</td>
+				<td></td>
+				<td>2.2.4.5</td>
+				<td>Uploaded content</td>
+			</tr>
+			<tr>
+				<td>3.1.4.6</td>
+				<td>Uploaded images can be included on editable pages</td>
+				<td></td>
+				<td>2.2.4.1</td>
+				<td>Modify page contents</td>
+			</tr>
+            <tr>
+                <td>3.1.5.1</td>
+                <td>Privileged users can create new articles</td>
+                <td></td>
+                <td>2.2.5.3</td>
+                <td>Create new article</td>
+            </tr>
+			<tr>
+				<td>3.1.5.2</td>
+				<td>Article content can be uploaded via a file or defined by direct input into a text editor</td>
+				<td></td>
+				<td>2.2.5.3<br />2.2.5.4</td>
+				<td>Create new article<br />Edit draft article</td>
+			</tr>
+            <tr>
+                <td>3.1.5.3</td>
+                <td>Privileged users can change the state of articles</td>
+                <td>The states are draft, published, archived</td>
+                <td>2.2.5.5<br />2.2.5.15</td>
+                <td>Publish article<br />Archive article</td>
+            </tr>
+            <tr>
+                <td>3.1.5.4</td>
+                <td>Articles will belong to a single category</td>
+                <td></td>
+                <td>2.2.5.3<br />2.2.5.10<br />&nbsp;</td>
+                <td>Create new article<br />View articles by category</td>
+            </tr>
+            <tr>
+                <td>3.1.5.5</td>
+                <td>Privileged users can create new categories</td>
+                <td></td>
+                <td>2.2.5.1</td>
+                <td>Create new category</td>
+            </tr>
+            <tr>
+                <td>3.1.5.6</td>
+                <td>Privileged users can rename categories</td>
+                <td></td>
+                <td>2.2.5.2</td>
+                <td>Rename category</td>
+            </tr>
+            <tr>
+                <td>3.1.5.7</td>
+                <td>Privileged users can delete categories</td>
+                <td></td>
+                <td>2.2.5.12</td>
+                <td>Delete category</td>
+            </tr>
+            <tr>
+                <td>3.1.5.8</td>
+                <td>Articles belong to a deleted category become uncategorized</td>
+                <td>The "uncategorized" category must exist and cannot be modified or deleted</td>
+                <td>2.2.5.12</td>
+                <td>Delete category</td>
+            </tr>
+            <tr>
+                <td>3.1.5.9</td>
+                <td>Articles can be tagged with multiple tag keywords</td>
+                <td></td>
+                <td>2.2.5.3<br />2.2.5.11</td>
+                <td>Create new article<br />View articles by tag</td>
+            </tr>
+            <tr>
+                <td>3.1.5.10</td>
+                <td>Privileged users can edit draft and published articles</td>
+                <td></td>
+                <td>2.2.5.4<br />2.2.5.6</td>
+                <td>Edit draft article<br />Edit published article</td>
+            </tr>
+			<tr>
+				<td>3.1.5.11</td>
+				<td>A public RSS feed will display the last 10 published articles</td>
+				<td></td>
+				<td>2.2.5.16</td>
+				<td>View RSS feed</td>
+			</tr>
+			<tr>
+				<td>3.1.5.12</td>
+				<td>Published article view counts will be recorded</td>
+				<td></td>
+                <td>2.2.5.13</td>
+                <td>Check article view count</td>
+			</tr>
+			<tr>
+				<td>3.1.5.13</td>
+				<td>View counts from the past seven days will determine popular articles</td>
+				<td>Daily counts must be recorded for at least the past seven days</td>
+                <td>2.2.5.14</td>
+                <td>Check popular articles</td>
+			</tr>
+            <tr>
+                <td>3.1.5.14</td>
+                <td>Users can post comments on articles</td>
+                <td></td>
+                <td>2.2.5.7</td>
+                <td>Post a comment</td>
+            </tr>
+            <tr>
+                <td>3.1.5.15</td>
+                <td>Guests will provide user information along with comment</td>
+                <td></td>
+                <td>2.2.5.7</td>
+                <td>Post a comment</td>
+            </tr>
+            <tr>
+                <td>3.1.5.16</td>
+                <td>User profile information will be used for logged-in user's comments</td>
+                <td></td>
+                <td>2.2.5.7</td>
+                <td>Post a comment</td>
+            </tr>
+			<tr>
+				<td>3.1.5.17</td>
+				<td>A daily email will contain a list of all new comments posted</td>
+				<td></td>
+				<td>2.2.5.17</td>
+				<td>Comment email report</td>
+			</tr>
+            <tr>
+                <td>3.1.5.18</td>
+                <td>Privileged users can edit comments</td>
+                <td></td>
+                <td>2.2.5.8</td>
+                <td>Modify comment</td>
+            </tr>
+            <tr>
+                <td>3.1.5.19</td>
+                <td>Privileged users can delete comments</td>
+                <td></td>
+                <td>2.2.5.9</td>
+                <td>Delete comment</td>
+            </tr>
+			<tr>
+				<td>3.1.5.20</td>
+				<td>Privileged users can disable comments for individual articles</td>
+				<td></td>
+				<td>2.2.5.18</td>
+				<td>Disable comments</td>
+			</tr>
+			<tr>
+				<td>3.1.5.21</td>
+				<td>Comments will be automatically disabled on articles over 90 days old</td>
+				<td></td>
+				<td>2.2.5.18</td>
+				<td>Disable comments</td>
+			</tr>
+			<tr>
+				<td>3.1.5.22</td>
+				<td>Comments will be filtered by a Bayesian probability filter</td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>3.1.5.22.1</td>
+				<td></td>
+				<td>Comments with a Bayesian probability less than 0.2 are posted</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>3.1.5.22.2</td>
+				<td></td>
+				<td>Comments with a Bayesian probability between 0.2 and 0.9 are placed in a moderation queue</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>3.1.5.22.3</td>
+				<td></td>
+				<td>Comments with a Bayesian probability greater than 0.9 are classified as spam</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>3.1.5.23</td>
+				<td>Privileged users can classify comments as clean or spam</td>
+				<td></td>
+				<td>2.2.7.1</td>
+				<td>Classify comments</td>
+			</tr>
+			<tr>
+				<td>3.1.5.23.1</td>
+				<td></td>
+				<td>Privileged users can approve comments in the moderation queue</td>
+				<td>2.2.7.1</td>
+				<td>Classify comments</td>
+			</tr>
+			<tr>
+				<td>3.1.5.23.2</td>
+				<td></td>
+				<td>Privileged users can classify comments in the moderation queue as spam</td>
+				<td>2.2.7.1</td>
+				<td>Classify comments</td>
+			</tr>
+			<tr>
+				<td>3.1.5.23.3</td>
+				<td></td>
+				<td>Privileged users can classify posted comments as spam</td>
+				<td>2.2.7.1</td>
+				<td>Classify comments</td>
+			</tr>
+			<tr>
+				<td>3.1.5.23.4</td>
+				<td></td>
+				<td>Privileged users can approve comments that have been classified as spam</td>
+				<td>2.2.7.1</td>
+				<td>Classify comments</td>
+			</tr>
+			<tr>
+				<td>3.1.5.24</td>
+				<td>Privileged users can teach the Bayesian filter</td>
+				<td></td>
+				<td>2.2.7.1</td>
+				<td>Classify comments</td>
+			</tr>
+			<tr>
+				<td>3.1.5.24.1</td>
+				<td></td>
+				<td>When approving comments, privileged users may choose to teach as ham</td>
+				<td>2.2.7.1</td>
+				<td>Classify comments</td>
+			</tr>
+			<tr>
+				<td>3.1.5.24.2</td>
+				<td></td>
+				<td>When approving comments, privileged users may choose to unteach as spam</td>
+				<td>2.2.7.1</td>
+				<td>Classify comments</td>
+			</tr>
+			<tr>
+				<td>3.1.5.24.3</td>
+				<td></td>
+				<td>When classifying as spam, privileged users may choose to teach as spam</td>
+				<td>2.2.7.1</td>
+				<td>Classify comments</td>
+			</tr>
+			<tr>
+				<td>3.1.5.24.4</td>
+				<td></td>
+				<td>When classifying as spam, privileged users may choose to unteach as ham</td>
+				<td>2.2.7.1</td>
+				<td>Classify comments</td>
+			</tr>
+			<tr>
+				<td>3.1.6.1</td>
+				<td>Privileged users can create new portfolio entries</td>
+				<td></td>
+				<td>2.2.6.1</td>
+				<td>Create portfolio entry</td>
+			</tr>
+			<tr>
+				<td>3.1.6.2</td>
+				<td>Privileged users can upload audio recordings for each portfolio entry</td>
+				<td></td>
+				<td>2.2.6.1<br />2.2.6.2</td>
+				<td>Create portfolio entry<br />Upload multiple files</td>
+			</tr>
+			<tr>
+				<td>3.1.6.3</td>
+				<td>Users can post comments on entries</td>
+				<td></td>
+				<td>2.2.6.5</td>
+				<td>Post a comment</td>
+			</tr>
+			<tr>
+				<td>3.1.6.4</td>
+				<td>Portfolio comment requirements are the same as the blog comment requirements</td>
+				<td></td>
+				<td>2.2.5.17<br />2.2.5.8-9<br />2.2.5.17<br />2.2.7.1</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>3.1.6.5</td>
+				<td>Privileged users can edit portfolio entries</td>
+				<td></td>
+				<td>2.2.6.2</td>
+				<td>Upload multiple files</td>
+			</tr>
+			<tr>
+				<td>3.1.6.6</td>
+				<td>Privileged users can remove audio recordings from a portfolio entry</td>
+				<td></td>
+				<td>2.2.6.3</td>
+				<td>Remove uploaded file</td>
+			</tr>
+			<tr>
+				<td>3.1.6.7</td>
+				<td>Privileged users can delete portfolio entries</td>
+				<td>All associated audio recordings must be deleted</td>
+				<td>2.2.6.4</td>
+				<td>Delete a portfolio entry</td>
+			</tr>
+            <tr>
+                <td>3.5.1.2.1</td>
+                <td>Users can only modify user information for themselves</td>
+                <td></td>
+                <td>2.2.3.3<br />2.2.3.6</td>
+                <td>Modify own user info<br />Modify other user info</td>
+            </tr>
+            <tr>
+                <td>3.5.1.2.2</td>
+                <td>Admins can perform all user management actions with exceptions</td>
+                <td></td>
+                <td>2.2.3.5-8</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3.5.1.2.2.1</td>
+                <td></td>
+                <td>Admins cannot delete themselves</td>
+                <td>2.2.3.8</td>
+                <td>Delete user</td>
+            </tr>
+            <tr>
+                <td>3.5.1.2.2.1</td>
+                <td></td>
+                <td>Admins cannot change their own role</td>
+                <td>2.2.3.7</td>
+                <td>Change user role</td>
+            </tr>
+            <tr>
+                <td>3.5.1.2.3</td>
+                <td>Admins can perform all page management actions</td>
+                <td></td>
+                <td>2.2.4.1-3</td>
+                <td></td>
+            </tr>
+			<tr>
+				<td>3.5.1.2.4</td>
+				<td>Admins can perform all assets management actions</td>
+				<td></td>
+				<td>2.2.4.5</td>
+				<td>Uploaded content</td>
+			</tr>
+            <tr>
+                <td>3.5.1.2.5</td>
+                <td>Admins can perform all blog management actions</td>
+                <td></td>
+                <td>2.2.5.1-6,<br />2.2.5.8-9,<br />2.2.5.12-13</td>
+                <td></td>
+            </tr>
+			<tr>
+				<td>3.5.1.2.6</td>
+				<td>Admins can perform all music portfolio management actions</td>
+				<td></td>
+				<td>2.2.6.1-4</td>
+				<td></td>
+			</tr>
+            <tr>
+                <td>3.5.1.2.7</td>
+                <td>All users can view published articles</td>
+                <td></td>
+                <td>2.2.5.10-11</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3.5.1.2.8</td>
+                <td>All users can post comments on articles</td>
+                <td></td>
+                <td>2.2.5.7</td>
+                <td>Post a comment</td>
+            </tr>
+            <tr>
+                <td>3.5.1.2.9</td>
+                <td>Users cannot change their username</td>
+                <td></td>
+                <td>2.2.3.3</td>
+                <td>Modify own user information</td>
+            </tr>
+            <tr>
+                <td>3.5.2.1</td>
+                <td>All front-end functionality must be usable when JavaScript is disabled</td>
+                <td>All JavaScript functionality must degrade gracefully</td>
+                <td>2.3.1.1</td>
+                <td>Disabled JavaScript</td>
+            </tr>
+            <tr>
+                <td>3.5.2.2</td>
+                <td>All front-end functionality must be usable in a text-only browser</td>
+                <td>All content and navigation must be clearly displayed</td>
+                <td>2.3.1.2</td>
+                <td>Text-Only Browsing</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<footer>
+    <p>Rev -<br />&#169; 2010 Kyle Treubig</p>
+</footer>
+
+</body>
+</html>
