@@ -50,18 +50,19 @@ ini_set('unserialize_callback_func', 'spl_autoload_call');
  * - boolean  caching     enable or disable internal caching                 FALSE
  */
 Kohana::init(array(
-    'base_url'  => 'http://localhost/kyletreubig/',
+    'base_url'  => BASE_URL,
     'index_file'=> INDEX_FILE,
-    'profile'   => TRUE,
     'errors'    => ! IN_PRODUCTION,
-    'profiling' => ! IN_PRODUCTION,
+    'profile'   => ! IN_PRODUCTION,
     'caching'   => IN_PRODUCTION,
 ));
 
 /**
  * Attach the file write to logging. Multiple writers are supported.
  */
-Kohana::$log->attach(new Kohana_Log_File(APPPATH.'logs'));
+$log_levels = preg_split("/,/", LOG_LVL);
+Kohana::$log->attach(new Kohana_Log_File(APPPATH.'site_logs'), $log_levels);
+Kohana::$log->attach(new Kohana_Log_File(APPPATH.'access_logs'), array('ACCESS'));
 
 /**
  * Attach a file reader to config. Multiple readers are supported.
@@ -108,9 +109,26 @@ Kohana::modules(array(
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
+Route::set('logs', 'logs/<dir>(/<file>)', array(
+		'file' => '.+',
+		'dir'  => 'site_logs|access_logs',
+	))->defaults(array(
+		'controller' => 'console',
+		'action'     => 'index',
+		'file'       => NULL,
+		'dir'        => 'site',
+	));
+Route::set('page', '(<page>)', array(
+	'page' => '[^\/]+',
+	))
+	->defaults(array(
+		'controller' => 'page',
+		'action'     => 'load',
+		'page'       => 'home',
+	));
 Route::set('default', '(<controller>(/<action>(/<id>)))')
     ->defaults(array(
-        'controller' => 'welcome',
+        'controller' => 'main',
         'action'     => 'index',
     ));
 
