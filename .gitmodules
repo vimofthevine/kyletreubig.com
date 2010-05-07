@@ -40,3 +40,9 @@
 [submodule "modules/sentry"]
 	path = modules/sentry
 	url = git://github.com/vimofthevine/sentry.git
+[submodule "modules/b8"]
+	path = modules/b8
+	url = git://github.com/stensi/Kohana-B8.git
+[submodule "modules/comments"]
+	path = modules/comments
+	url = git@github.com:vimofthevine/comments.git

@@ -6,3 +6,7 @@
 			<?php echo date('F jS Y \a\t g:s a', $article->date) ?></time>
 	<?php echo $article->text ?> 
 </article>
+
+<?php echo $comment_form ?> 
+
+<?php echo $comment_list ?> 

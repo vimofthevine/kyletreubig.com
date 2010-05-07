@@ -76,12 +76,16 @@ Kohana::$config->attach(new Kohana_Config_File(CONF_DIR), TRUE);
  */
 Kohana::modules(array(
     // Mine
+    'comments'  => MODPATH.'comments',  // Comments
     'blog'      => MODPATH.'blog',      // Blogging Engine
     'cms'       => MODPATH.'cms',       // CMS
     'admin'     => MODPATH.'admin',     // Control Panel Framework
     'sentry'    => MODPATH.'sentry',    // Auth Package
     'versioned' => MODPATH.'versioned', // Model Version Control
     'grid'      => MODPATH.'grid',      // Easy table creation
+
+	// Simon Stenhouse
+	'b8'        => MODPATH.'b8',        // Bayesian filtering
 
     // Wouter
     'a2'        => MODPATH.'a2',        // Authorization
