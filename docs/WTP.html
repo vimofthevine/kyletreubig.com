@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Website Test Procedure for kyletreubig.com</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+<header>
+	<h1>Website Test Procedure for kyletreubig.com</h1>
+	<address>Kyle Treubig</address>
+	<p>
+		Rev - <br />
+		<time datetime="2010-04-28">April 28, 2010</time>
+	</p>
+</header>
+
+<section>
+	<h1>Revision History</h1>
+	<table id="changelog" rules="all">
+		<thead>
+			<tr>
+				<th>Revision</th>
+				<th>Date</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>-</td>
+				<td>2010-04-28</td>
+				<td>Initial Creation</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<nav>
+	<h1 id="toc">Table of Contents</h1>
+	<ol>
+		<li>Introduction
+			<ol>
+				<li><a href="#intro-purpose">Purpose of This Document</a></li>
+				<li><a href="#intro-scope">Scope of this Document</a></li>
+				<li><a href="#intro-descrip">Description of This Document</a></li>
+			</ol>
+		</li>
+		<li>Test Plan
+			<ol>
+				<li><a href="#tests-unit">Unit Tests</a></li>
+				<li><a href="#tests-integration">Integration Tests</a>
+					<ol>
+						<li><a href="#tests-integration-back">Back End</a></li>
+						<li><a href="#tests-integration-front">Front End</a></li>
+						<li><a href="#tests-integration-users">User Management</a></li>
+						<li><a href="#tests-integration-content">Content Management</a></li>
+						<li><a href="#tests-integration-blog">Blog</a></li>
+						<li><a href="#tests-integration-portfolio">Music Portfolio</a></li>
+						<li><a href="#tests-integration-comments">Comments</a></li>
+					</ol>
+				</li>
+				<li><a href="#tests-acceptance">Acceptance Tests</a>
+					<ol>
+						<li><a href="#tests-acceptance-usability">Usability</a></li>
+					</ol>
+				</li>
+			</ol>
+		</li>
+		<li>Appendix
+			<ol id="appendix">
+				<li><a href="#appendix-wrs">Website Requirements Specification</a></li>
+				<li><a href="#appendix-reqmat">Requirements Traceability Matrix</a></li>
+			</ol>
+		</li>
+	</ol>
+</nav>
+
+<section>
+	<h1 id="intro">1 Introduction</h1>
+	<h2 id="intro-purpose">1.1 Purpose of This Document</h2>
+	<p>
+		The purpose of this document is to describe a set of test steps
+		that will be used to verify that kyletreubig.com has been designed
+		to meet all of its requirements.
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="intro-scope">1.2 Scope of This Document</h2>
+	<p>
+		This document contains procedures for running unit tests, integration
+		tests, and customer acceptance tests.  Procedures are described by
+		steps and expected results.
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="intro-descrip">1.3 Description of This Document</h2>
+	<p>
+		The following section contains the test procedures for unit tests,
+		integration tests, and customer acceptance tests.  The requirements
+		matrix and requirements specification are provided in the Appendix.
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+</section>
+<section>
+	<h1 id="tests">2 Test Plan</h1>
+	<h2 id="tests-unit">2.1 Unit Tests</h2>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="tests-integration">2.2 Integration Tests</h2>
+
+	<h3 id="tests-integration-back">2.2.1 Back End</h3>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="tests-integration-front">2.2.2 Front End</h3>
+	<p>None</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="tests-integration-users">2.2.3 User Management</h3>
+	<p>
+		<ol>
+			<li>Log in as user
+				<ol>
+					<li>Proceed to 'login' page
+						<p>Should see user login form</p>
+					</li>
+					<li>Fill in form with valid login credentials</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to 'login' page
+						<p>Should see 'already logged in' message</p>
+					</li>
+				</ol>
+			</li>
+			<li>Log out
+				<ol>
+					<li>Log in as a user</li>
+					<li>Proceed to 'logout' page
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to 'login' page
+						<p>Should see user login form</p>
+					</li>
+				</ol>
+			</li>
+			<li>Modify own user information
+				<ol>
+					<li>Log in as a user</li>
+					<li>Proceed to 'edit my info' page
+						<p>
+							Should see a user information form
+							with own information
+						</p>
+					</li>
+					<li>Change the username to some other value</li>
+					<li>Submit the form
+						<p>Should see access denial message</p>
+					</li>
+					<li>Proceed to 'edit my info' page
+						<p>
+							Should see a user information form
+							with own information
+						</p>
+					</li>
+					<li>Change some value (other than password)</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to 'view my info' page
+						<p>Should see updated user information</p>
+					</li>
+				</ol>
+			</li>
+			<li>Change own password
+				<ol>
+					<li>Log in as a user</li>
+					<li>Proceed to 'edit my info' page
+						<p>
+							Should see a user information form
+							with own information
+						</p>
+					</li>
+					<li>Change the password to new value</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Logout</li>
+					<li>Login with new password
+						<p>
+							Should see confirmation message and
+							be logged in
+						</p>
+					</li>
+				</ol>
+			</li>
+			<li>Create a new user
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'add user' page
+						<p>Should see a user information form</p>
+					</li>
+					<li>Fill in form with values:
+						<ul>
+							<li>Username: testuser</li>
+							<li>Password: testpass</li>
+						</ul>
+					</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to 'user list' page
+						<p>Should see testuser in user list</p>
+					</li>
+				</ol>
+			</li>
+			<li>Modify other user information
+				<ol>
+					<li>Attempt to modify other user
+						<p>Should see access denial message</p>
+					</li>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'user list' page
+						<p>Should see testuser in user list</p>
+					</li>
+					<li>Select testuser to edit
+						<p>
+							Should see a user information form
+							with testuser's information
+						</p>
+					</li>
+					<li>Change the values:
+						<ul>
+							<li>Username: moduser</li>
+						</ul>
+					</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to 'user list' page
+						<p>Should see moduser in user list</p>
+					</li>
+				</ol>
+			</li>
+			<li>Change user role
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'user list' page
+						<p>Should see own user in user list</p>
+					</li>
+					<li>Select own user to edit
+						<p>Should see user info form with own user</p>
+					</li>
+					<li>Change own user's role to 'user'</li>
+					<li>Submit the form
+						<p>Should see access denial message</p>
+					</li>
+					<li>Proceed to 'user list' page
+						<p>Should see moduser in user list</p>
+					</li>
+					<li>Select moduser to edit
+						<p>Should see user info form with moduser</p>
+					</li>
+					<li>Change moduser's role to 'admin'</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to 'user list' page
+						<p>
+							Should see moduser in user list as an
+							admin user
+						</p>
+					</li>
+				</ol>
+			</li>
+			<li>Delete user
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'user list' page
+						<p>Should see own user in user list</p>
+					</li>
+					<li>Select own user to delete
+						<p>Should see a 'confirm deletion' popup or message</p>
+					</li>
+					<li>Confirm the deletion
+						<p>Should see access denial message</p>
+					</li>
+					<li>Proceed to 'user list' page
+						<p>Should see moduser in user list</p>
+					</li>
+					<li>Select moduser to delete
+						<p>Should see a 'confirm deletion' popup or message</p>
+					</li>
+					<li>Confirm the deletion
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to 'user list' page
+						<p>Should not see moduser in user list</p>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="tests-integration-content">2.2.4 Content Management</h3>
+	<p>
+		<ol>
+			<li>Modify page contents
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'page list' page
+						<p>Should see list of editable pages</p>
+					</li>
+					<li>Select a page to edit
+						<p>
+							Should see page editor form with
+							page contents
+						</p>
+					</li>
+					<li>Insert an image
+						<p>Should see a list of images contained in the upload folder</p>
+					</li>
+					<li>Select an image
+						<p>
+							Should see image tag inserted into page content with
+							path to selected image file
+						</p>
+					</li>
+					<li>Make changes to the page contents</li>
+					<li>Submit changes
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to front-end location of modified page
+						<p>Should see changes to the page contents</p>
+					</li>
+				</ol>
+			</li>
+			<li>View page versions
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'page list' page
+						<p>Should see list of editable pages</p>
+					</li>
+					<li>Select a page to edit and modify its contents
+						<p>Should be same page as used in test 2.2.4.1</p>
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to 'page list' page
+						<p>Should see modified page in page list</p>
+					</li>
+					<li>Select modified page and view it's history
+						<p>Should see list of revisions</p>
+					</li>
+				</ol>
+			</li>
+			<li>Compare page versions
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'page list' page
+						<p>Should see list of editable pages</p>
+					</li>
+					<li>Select a page and view it's history
+						<p>Should be same page as used in test 2.2.4.2</p>
+						<p>Should see list of revisions</p>
+					</li>
+					<li>Select the initial and head versions</li>
+					<li>Click on 'compare'
+						<p>
+							Should see page contents with deletions
+							and additions highlighted
+						</p>
+					</li>
+				</ol>
+			</li>
+			<li>Inspect about page
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'page list' page
+						<p>Should see about page in page list</p>
+					</li>
+				</ol>
+			</li>
+			<li>Uploaded content
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to asset management page
+						<p>Should see list of uploaded files, if any</p>
+					</li>
+					<li>Create a new folder
+						<p>Should see a form for folder name</p>
+					</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>View contents of folder
+						<p>Should be folder just created</p>
+						<p>Should see an empty folder</p>
+					</li>
+					<li>Upload a file
+						<p>File should be one of the allowed file types set in the config file</p>
+						<p>New filename should be left blank</p>
+					</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+						<p>Should see uploaded file inside folder</p>
+					</li>
+					<li>Upload a file
+						<p>New filename should be changed</p>
+					</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+						<p>Should see uploaded file with new name inside folder</p>
+					</li>
+					<li>Delete file
+						<p>Should be one of the files uploaded into folder</p>
+						<p>Should see confirmation form</p>
+					</li>
+					<li>Select no
+						<p>Should see folder with both files</p>
+					</li>
+					<li>Delete file
+						<p>Should be one of the files uploaded into folder</p>
+						<p>Should see confirmation form</p>
+					</li>
+					<li>Select yes
+						<p>Should see confirmation message</p>
+						<p>Should see folder with one file</p>
+					</li>
+					<li>Delete folder
+						<p>Should be the folder created</p>
+						<p>Should see confirmation form</p>
+					</li>
+					<li>Select yes
+						<p>Should see confirmation message</p>
+						<p>Should see parent folder without the test folder</p>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="tests-integration-blog">2.2.5 Blog</h3>
+	<p>
+	All tests are executed against a test category and article
+	created in the first few integration tests.
+	</p>
+	<p>
+		<ol>
+			<li>Create new category
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'create category' page
+						<p>Should see a category name form</p>
+					</li>
+					<li>Fill in form with category name, "tests"</li>
+					<li>Submit the form
+						<p>Should see a confirmation message</p>
+					</li>
+					<li>Proceed to 'category list' page
+						<p>Should see "tests" category in category list</p>
+					</li>
+				</ol>
+			</li>
+			<li>Rename category
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'category list' page
+						<p>Should see the test category in category list</p>
+					</li>
+					<li>Select the test category to edit
+						<p>Should see a category name form with "tests"</p>
+					</li>
+					<li>Change the name to "Integration Tests"</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to 'category list' page
+						<p>Should see "Integration Tests" category in category list</p>
+					</li>
+				</ol>
+			</li>
+			<li>Create new article
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'create article' page
+						<p>Should see article editor form</p>
+						<p>Should see a file upload form</p>
+					</li>
+					<li>Fill in form with values:
+						<ul>
+							<li>Title: An Integration Test Article</li>
+							<li>Category: Integration Tests</li>
+							<li>Tags: testing, processes</li>
+							<li>State: draft</li>
+						</ul>
+					</li>
+					<li>Create a test article in a local file</li>
+					<li>Select the local file in the file upload form</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to 'article list' page
+						<p>Should see the test article in article list</p>
+					</li>
+					<li>Proceed to back-end preview of new article
+						<p>Should see test article in rendered state</p>
+					</li>
+				</ol>
+			</li>
+			<li>Edit draft article
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'article list' page
+						<p>Should see list of articles</p>
+					</li>
+					<li>Select the test article to edit
+						<p>Should see article editor form with test article</p>
+					</li>
+					<li>Make changes to the article contents</li>
+					<li>Submit changes
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to back-end preview of the test article
+						<p>Should see changes to article contents</p>
+					</li>
+				</ol>
+			</li>
+			<li>Publish article
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'article list' page
+						<p>Should see list of articles</p>
+					</li>
+					<li>Select the test article to edit
+						<p>Should see article editor form with test article</p>
+					</li>
+					<li>Change the state to published</li>
+					<li>Submit changes
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to front-end location of article
+						<p>Should see test article in rendered state</p>
+					</li>
+				</ol>
+			</li>
+			<li>Edit published article
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'article list' page
+						<p>Should see list of articles</p>
+					</li>
+					<li>Select the test article to edit
+						<p>Should see article editor form with test article</p>
+					</li>
+					<li>Make changes to the article contents</li>
+					<li>Submit changes
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to front-end location of article
+						<p>Should see changes to article contents</p>
+					</li>
+				</ol>
+			</li>
+			<li>Post a comment
+				<ol>
+					<li>Log in as a user</li>
+					<li>Proceed to front-end location of test article
+						<p>
+							Should see test article with comment form.
+							Comment form should only have subject and body
+							fields.
+						</p>
+					</li>
+					<li>Log out</li>
+					<li>Proceed to front-end location of test article
+						<p>
+							Should see test article with comment form.
+							Comment form should have name, email, etc. fields.
+						</p>
+					</li>
+					<li>Fill in form with values:
+						<ul>
+							<li>Name: Tester</li>
+							<li>Email: test@kyletreubig.com</li>
+							<li>Subject: A Test Comment</li>
+						</ul>
+					</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed back to front-end location of article
+						<p>Should see newly posted comment in comment list of article</p>
+					</li>
+				</ol>
+			</li>
+			<li>Modify comment
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to front-end location of test article
+						<p>Should see test comment in comment list</p>
+					</li>
+					<li>Select test comment to edit (click on 'edit' link)
+						<p>Should see comment form with test comment</p>
+					</li>
+					<li>Modify the values:
+						<ul>
+							<li>Name: Test User</li>
+							<li>Subject: A Modified Comment</li>
+						</ul>
+					</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed back to front-end location of article
+						<p>Should see test comment with changes</p>
+					</li>
+				</ol>
+			</li>
+			<li>Delete comment
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to front-end location of test article
+						<p>Should see test comment in comment list</p>
+					</li>
+					<li>Select comment to delete (click on 'delete' link)
+						<p>Should see a 'confirm deletion' popup or message</p>
+					</li>
+					<li>Confirm the deletion
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed back to front-end location of article
+						<p>Should not see the test comment in comment list</p>
+					</li>
+				</ol>
+			</li>
+			<li>View articles by category
+				<ol>
+					<li>Proceed to front-end category list
+						<p>Should see list of categories</p>
+					</li>
+					<li>Select "Integration Tests" category
+						<p>Should see list of articles belonging to the category</p>
+						<p>Should see the test article in the list</p>
+					</li>
+				</ol>
+			</li>
+			<li>View articles by tag
+				<ol>
+					<li>Proceed to front-end tag list
+						<p>Should see list of tags</p>
+					</li>
+					<li>Select "testing" tag
+						<p>Should see list of articles tagged with "testing"</p>
+						<p>Should see the test article in the list</p>
+					</li>
+					<li>Select "processes" tag
+						<p>Should see list of articles tagged with "processes"</p>
+						<p>Should see the test article in the list</p>
+					</li>
+				</ol>
+			</li>
+			<li>Delete category
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'category list' page
+						<p>Should see the test category in category list</p>
+					</li>
+					<li>Select the test category to delete
+						<p>Should see a 'confirm deletion' popup or message</p>
+					</li>
+					<li>Confirm the deletion
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to front-end category list
+						<p>Should not see test category in category list</p>
+					</li>
+					<li>Select "uncategorized" category
+						<p>Should see the test article in the list</p>
+					</li>
+				</ol>
+			</li>
+			<li>Check article view count
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'article statistics' page
+						<p>
+							Should see list of articles.
+							Note the view count of the test article.
+						</p>
+					</li>
+					<li>Proceed to front-end location of test article</li>
+					<li>Proced to 'article statistics' page
+						<p>
+							Should see list of articles.
+							The view count of the test article should be incremented.
+						</p>
+					</li>
+				</ol>
+			</li>
+			<li>Check popular articles
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Create a new article and publish it</li>
+					<li>Proceed to 'article statistics' page
+						<p>
+							Should see list of popular articles
+							ordered by most popular. The test article
+							should be more popular than the new article.<br />
+							Note the view counts of the test article.
+						</p>
+					</li>
+					<li>Proceed to the front-end location of the new article
+						<p>
+							Repeat for at least as many times as the view
+							counts of the test article
+						</p>
+					</li>
+					<li>Proceed to the 'article statistics' page
+						<p>
+							Should see list of popular articles ordered
+							by most popular.  The new article should be
+							more popular than the test article.
+						</p>
+					</li>
+				</ol>
+			</li>
+			<li>Archive article
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'article list' page
+						<p>Should see list of articles</p>
+					</li>
+					<li>Select the test article to edit
+						<p>Should see article editor form with test article</p>
+					</li>
+					<li>Change the state to archived</li>
+					<li>Submit changes
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to 'archived articles' page
+						<p>Should see test article in the article list</p>
+					</li>
+					<li>Proceed to front-end article list
+						<p>Should not see test article in article list</p>
+					</li>
+				</ol>
+			</li>
+			<li>View RSS feed
+				<ol>
+					<li>Ensure there are draft and published articles in the database</li>
+					<li>Proceed to front-end RSS feed
+						<p>Should see up to 10 published articles in xml format</p>
+					</li>
+					<li>Use an RSS feed reader to view RSS feed
+						<p>Should see up to 10 published articles in the reader</p>
+					</li>
+				</ol>
+			</li>
+			<li>Comment email report
+				<ol>
+					<li>Ensure there are comments in the database with timestamps
+						within the past 24 hours, and timestamps over 24 hours old</li>
+					<li>Set up cron job to run the comment report task
+						<p>Should receive email with comments</p>
+						<p>Should only be comments with timestamps within the past 24 hours</li>
+					</li>
+				</ol>
+			</li>
+			<li>Disable comments
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'article list' page
+						<p>Should see list of articles</p>
+					</li>
+					<li>Select an article to edit
+						<p>Should be an article with active comments</p>
+						<p>Should see article editor form with selected article</p>
+					</li>
+					<li>Check the disable comments checkbox</li>
+					<li>Submit changes
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to front-end location of article
+						<p>Should see comments on article, but no comment form</p>
+					</li>
+					<li>Modify an article's database record
+						<p>Should be an article with active comments</p>
+						<p>Should set the timestamp to some date over 90 days ago</p>
+					</li>
+					<li>Proceed to front-end location of article
+						<p>Should see comments on article, but no comment form</p>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="tests-integration-portfolio">2.2.6 Music Portfolio</h3>
+	<p>
+		<ol>
+			<li>Create portfolio entry
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'create portfolio entry' page
+						<p>Should see entry editor form</p>
+						<p>Should see a file upload form</p>
+					</li>
+					<li>Fill in form</li>
+					<li>Select mp3 file in file upload form</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to front-end location of entry
+						<p>Should see submitted portfolio entry with audio clip</p>
+					</li>
+					<li>Play the audio clip
+						<p>Should hear the audio file uploaded at entry creation</p>
+					</li>
+				</ol>
+			</li>
+			<li>Upload multiple files
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'portfolio entry list' page
+						<p>Should see list of entries</p>
+					</li>
+					<li>Select an entry to edit
+						<p>Should be an entry with an audio clip</p>
+						<p>Should see entry form with file upload form</p>
+					</li>
+					<li>Select an mp3 file in file upload form</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Repeat with a third mp3 file</li>
+					<li>Proceed to front-end location of entry
+						<p>Should see submitted portfolio entry with three audio clips</p>
+					</li>
+				</ol>
+			</li>
+			<li>Remove uploaded file
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'portfolio entry list' page
+						<p>Should see list of entries</p>
+					</li>
+					<li>Select an entry to edit
+						<p>Should be an entry with audio clips</p>
+						<p>Should see entry form</p>
+						<p>Should see list of associated audio clips</p>
+					</li>
+					<li>Select an audio clip to delete
+						<p>Should see confirmation form</p>
+					</li>
+					<li>Select no
+						<p>Should see the entry modification form</p>
+					</li>
+					<li>Select an audio clip to delete
+						<p>Should see confirmation form</p>
+					</li>
+					<li>Select yes
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed to front-end location of entry
+						<p>Should see submitted portfolio entry with one less audio clip</p>
+					</li>
+				</ol>
+			</li>
+			<li>Delete a portfolio entry
+				<ol>
+					<li>Log in as an admin user</li>
+					<li>Proceed to 'portfolio entry list' page
+						<p>Should see list of entries</p>
+					</li>
+					<li>Select an entry to delete
+						<p>Should see confirmation form</p>
+					</li>
+					<li>Select no
+						<p>Should see list of entries</p>
+					</li>
+					<li>Select an entry to delete
+						<p>Should see confirmation form</p>
+					</li>
+					<li>Select yes
+						<p>Should see confirmation message</p>
+						<p>Selected entry should be gone from list</p>
+						<p>Associated audio clips should be removed from the database</p>
+						<p>Associated audio files should be delete</p>
+					</li>
+				</ol>
+			</li>
+			<li>Post a comment
+				<ol>
+					<li>Log in as a user</li>
+					<li>Proceed to front-end location of portfolio entry
+						<p>
+							Should see entry with comment form.
+							Comment form should only have subject and body fields.
+						</p>
+					</li>
+					<li>Log out</li>
+					<li>Proceed to front-end location of portfolio entry
+						<p>
+							Should see entry with comment form.
+							Comment form should only have name, email, etc. fields.
+						</p>
+					</li>
+					<li>Fill in form with values:
+						<ul>
+							<li>Name: Tester</li>
+							<li>Email: test@kyletreubig.com</li>
+							<li>Subject: A Test Comment</li>
+						</ul>
+					</li>
+					<li>Submit the form
+						<p>Should see confirmation message</p>
+					</li>
+					<li>Proceed back to front-end location of portfolio entry
+						<p>Should see newly posted comment in comment list of entry</p>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h3 id="tests-integration-comments">2.2.7 Comments</h3>
+	<p>
+		<ol>
+			<li>Classify comments
+				<ol>
+					<li>Ensure logging level includes debug</li>
+					<li>Manually insert into the database:
+						<ul>
+							<li>A comment marked as approved</li>
+							<li>Four comments flagged to be moderated</li>
+							<li>A comment marked as spam</li>
+						</ul>
+					</li>
+					<li>Log in as an admin</li>
+					<li>Proceed to comment moderation queue page
+						<p>Should see four comments</p>
+					</li>
+					<li>Approve a comment, selecting the "learn as ham" option
+						<p>Should see confirmation message</p>
+						<p>Comment should no longer be in list</li>
+						<p>Log should have entry about learning the comment as ham</p>
+					</li>
+					<li>Approve a comment, selecting the "unlearn as spam" option
+						<p>Should see confirmation message</p>
+						<p>Comment should no longer be in list</li>
+						<p>Log should have entry about unlearning the comment as spam</p>
+					</li>
+					<li>Mark a comment as spam, selecting the "learn as spam" option
+						<p>Should see confirmation message</p>
+						<p>Comment should no longer be in list</li>
+						<p>Log should have entry about learning the comment as spam</p>
+					</li>
+					<li>Mark the remaining comment as spam, selecting the "unlearn as ham" option
+						<p>Should see confirmation message</p>
+						<p>Comment should no longer be in list</li>
+						<p>Log should have entry about unlearning the comment as ham</p>
+					</li>
+					<li>Proceed to posted comments list
+						<p>Should see three comments</p>
+					</li>
+					<li>Mark a comment as spam (no option selected)
+						<p>Should see confirmation message</p>
+						<p>Comment should no longer be in list</li>
+						<p>Log should have no entries regarding the Bayesian filter's learning</p>
+					</li>
+					<li>Proceed to spam comments list
+						<p>Should see four comments</p>
+					</li>
+					<li>Approve a comment (no option selected)
+						<p>Should see confirmation message</p>
+						<p>Comment should no longer be in list</li>
+						<p>Log should have no entries regarding the Bayesian filter's learning</p>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="tests-acceptance">2.3 Acceptance Tests</h2>
+
+	<h3 id="tests-acceptance-usability">2.3.1 Usability</h3>
+	<p>
+		<ol>
+			<li>Disabled JavaScript
+				<ol>
+					<li>Open Mozilla Firefox and disable JavaScript</li>
+					<li>Perform all integration tests</li>
+				</ol>
+			</li>
+			<li>Text-Only Browsing
+				<ol>
+					<li>Open the lynx browser</li>
+					<li>Perform all integration tests</li>
+				</ol>
+			</li>
+		</ol>
+	</p>
+	<a class="top" href="#toc">Top</a>
+
+</section>
+<section>
+	<h1>3 Appendix</h1>
+	<h2 id="appendix-wrs">A - <a href="WRS.html">Website Requirements Specification</a></h2>
+	<a class="top" href="#toc">Top</a>
+
+	<h2 id="appendix-reqmat">B - <a href="RTM.html">Requirements Traceability Matrix</a></h2>
+	<a class="top" href="#toc">Top</a>
+</section>
+
+<footer>
+	<p>Rev -<br />&#169; 2010 Kyle Treubig</p>
+</footer>
+
+</body>
+</html>
