@@ -1,5 +1,8 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
+// Application version
+define('APP_VERSION', '0.2.1');
+
 //-- Environment setup --------------------------------------------------------
 
 /**
