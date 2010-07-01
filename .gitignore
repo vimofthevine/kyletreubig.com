@@ -2,3 +2,4 @@ build.properties
 env.php
 env_stage.php
 application/config/*
+assets/*
