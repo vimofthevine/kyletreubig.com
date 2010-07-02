@@ -83,7 +83,6 @@ Kohana::modules(array(
     'blog'      => MODPATH.'blog',      // Blogging Engine
     'cms'       => MODPATH.'cms',       // CMS
     'admin'     => MODPATH.'admin',     // Control Panel Framework
-    'sentry'    => MODPATH.'sentry',    // Auth Package
     'versioned' => MODPATH.'versioned', // Model Version Control
     'grid'      => MODPATH.'grid',      // Easy table creation
 
