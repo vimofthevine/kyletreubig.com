@@ -43,3 +43,6 @@
 [submodule "modules/comments"]
 	path = modules/comments
 	url = git@github.com:vimofthevine/comments.git
+[submodule "application/vendor/swift"]
+	path = application/vendor/swift
+	url = git://github.com/swiftmailer/swiftmailer.git
