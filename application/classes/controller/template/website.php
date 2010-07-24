@@ -24,10 +24,16 @@ class Controller_Template_Website extends Controller_Template_Cms {
 		if ($this->auto_render)
 		{
 			// Prepare templates
-			$this->template         = View::factory($this->template_dir.'/template');
-			$this->template->header = View::factory($this->template_dir.'/header');
-			$this->template->menu   = View::factory($this->template_dir.'/menu');
-			$this->template->footer = View::factory($this->template_dir.'/footer');
+			$this->template = View::factory($this->template_dir.'/template')
+				->bind('header', $header)
+				->bind('footer', $footer);
+
+			$header = View::factory($this->template_dir.'/header')
+				->bind('menu', $menu);
+
+			$menu = View::factory($this->template_dir.'/menu');
+
+			$footer = View::factory($this->template_dir.'/footer');
 
 			// Prepare media arrays
 			$this->template->styles = array();
