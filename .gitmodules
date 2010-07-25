@@ -46,3 +46,6 @@
 [submodule "application/vendor/swift"]
 	path = application/vendor/swift
 	url = git://github.com/swiftmailer/swiftmailer.git
+[submodule "modules/kostache"]
+	path = modules/kostache
+	url = git://github.com/zombor/KOstache.git
