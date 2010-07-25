@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <!-- Kohana module build file -->
-<project name="rachelkwapien.com" default="usage" basedir=".">
+<project name="kyletreubig.com" default="usage" basedir=".">
 	<target name="usage">
 		<echo msg="Phing usage:" />
 		<echo msg="  phing clean	: clean all phing output" />
@@ -31,12 +31,19 @@
 				<exclude name="**/.gitignore" />
 				<exclude name="**/.gitmodules" />
 				<exclude name="build.xml" />
-				<exclude name="**/logs/**" />
-				<exclude name="**/cache/**" />
+				<exclude name="build.properties" />
+				<!-- app-specific stuff -->
+				<exclude name="application/cache/**" />
+				<exclude name="application/access_logs/**" />
+				<exclude name="application/site_logs/**" />
+				<exclude name="assets/src/**" />
+				<exclude name="resources/**" />
+				<!-- end of app-specific stuff -->
 			</fileset>
 		</copy>
 		<mkdir dir="${export}/tmp/application/cache" />
-		<mkdir dir="${export}/tmp/application/logs" />
+		<mkdir dir="${export}/tmp/application/access_logs" />
+		<mkdir dir="${export}/tmp/application/site_logs" />
 	</target>
 
 	<target name="package" depends="copy" description="Create application package">
